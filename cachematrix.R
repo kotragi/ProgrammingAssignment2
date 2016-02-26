@@ -9,7 +9,7 @@
 ## get the value of the inverse matrix
 
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(X = matrix()) {
   
 ## setting the inverse empty each time a matrix is made
   
@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
     X <<- Y
     inverse <<- NULL
   }
-  get <- function() 
+  get <- function() X
   setinverse <- function(solution) inverse <<- solution
   getinverse <- function() inverse
   
@@ -36,7 +36,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Before calculating, the function checks whether the inverse was calculated before
 ## If yes, uses that value so that we don't calculate again
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(X, ...) {
 
   inverse <- X$getinverse
   ## checking if inverse exists in cache, gives comment if yes
